@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var enterNameTextField:      UITextField!
     @IBOutlet weak var enterAMessageTextField:  UITextField!
     @IBOutlet weak var mailButton:              UIButton!
+    @IBOutlet weak var nameLabel:               UILabel!
     
     // MARK: - VC life cycle
     
@@ -32,6 +33,10 @@ class ViewController: UIViewController {
         enterAMessageTextField.resignFirstResponder()
         messageLabel.textColor = UIColor.redColor()
         mailButton.setTitle("Mail Sent", forState: .Normal)
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextField.text
+        enterNameTextField.text = ""
+        nameLabel.textColor = UIColor.blueColor()
     }
 }
 
